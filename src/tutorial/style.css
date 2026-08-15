@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 @font-face {
   font-family: Minecraft;
   src: url("../assets/minecraft.otf");
@@ -335,7 +339,7 @@ body,
   align-items: start;
   gap: 7px;
   width: min(488px, 88vw);
-  height: 60px;
+  height: 65px;
   margin-inline: auto;
   padding: 3px;
   background: #050505;
@@ -377,7 +381,6 @@ body,
   width: 29px;
   height: 18px;
   object-fit: contain;
-  image-rendering: pixelated;
 }
 .edit-form {
   position: absolute;
