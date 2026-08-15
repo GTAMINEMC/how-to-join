@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 .landing-brand {
   position: relative;
   width: min(430px, calc(76vw / var(--page-scale)), calc(42vh / var(--page-scale)));
@@ -21,7 +25,7 @@
 }
 .server-line strong { color: #fff; }
 .gap {
-  height: 14px;
+  height: 5px;
 }
 .platform-icons { display: inline-flex; gap: 5px; align-items: center; }
 .platform-icons svg { width: 20px; height: 20px; }
@@ -29,7 +33,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 .splash {
   position: absolute;
