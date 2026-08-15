@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 const refererWhitelist=(import.meta.env.VITE_REFERER_WHITELIST||'').split(',').map((value:string)=>value.trim().toLowerCase()).filter(Boolean);
 
 function matchesWildcard(value:string,pattern:string){
@@ -27,4 +31,4 @@ export function withReferer(href:string){
   return `${href}${separator}referer=${encodeURIComponent(queryReferer)}`;
 }
 
-export const SITE_CONFIG={server:{name:'GTAMINE',host:serverHost,port:25565,version:'1.21.11'},downloads:{windows:'https://legacylauncher.ru/ru',android:'https://play.google.com/store/apps/details?id=net.kdt.pojavlaunch',ios:'https://github.com/AngelAuraMC/Amethyst-iOS'}} as const;
+export const SITE_CONFIG={server:{name:'GTAMINE',host:serverHost,port:25565,version:'1.21.11'},downloads:{windows:'https://legacylauncher.ru/ru',android:'https://play.google.com/store/apps/details?id=net.kdt.pojavlaunch',ios:'https://www.google.com/ai?q=как+установить+amethyst+minecraft+java+edition+client+на+ios+и+зайти+на+'+ serverHost +'?'}} as const;
