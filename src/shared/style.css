@@ -1,0 +1,126 @@
+@font-face {
+  font-family: Minecraft;
+  src: url("../assets/minecraft.otf");
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: Minecraft, "Courier New", monospace;
+  color: #fff;
+}
+body {
+  background: #101214;
+}
+.panorama {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 2px 2px #222;
+}
+.panorama-bg {
+  position: fixed;
+  z-index: 0;
+  inset: -5%;
+  background: linear-gradient(#0003, #0009), url("../assets/panorama.png") center/cover;
+  filter: blur(3px);
+  animation: panorama-drift 12s ease-in-out infinite alternate;
+  will-change: transform, background-position;
+}
+@keyframes panorama-drift {
+  0% { transform: scale(1.06) translate3d(-1.5%, -0.6%, 0); background-position: 44% 50%; }
+  100% { transform: scale(1.12) translate3d(1.5%, 0.6%, 0); background-position: 57% 50%; }
+}
+.panorama > :not(.panorama-bg) { position: relative; z-index: 1; }
+.brand-lockup { display: block; width: min(430px, 76vw); text-align: center; }
+.gtamine-brand { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(4px 5px #111); image-rendering: pixelated; }
+.mc-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 54px;
+  padding: 12px 22px;
+  border: 2px solid #050505;
+  outline: none;
+  background: url("../assets/buttons.png") 50% 50% / 100% 300% repeat-x;
+  image-rendering: pixelated;
+  color: #fff;
+  text-decoration: none;
+  font:
+    18px Minecraft,
+    monospace;
+  text-shadow: 2px 2px #222;
+  cursor: pointer;
+  text-align: center;
+}
+.mc-button:hover,
+.mc-button:focus-visible {
+  background-position: 50% 100%;
+  border-color: #fff;
+}
+.mc-button:disabled {
+  filter: brightness(0.55);
+  cursor: not-allowed;
+  background-position: 50% 0;
+}
+.mc-button span {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+.mc-button svg { flex: 0 0 auto; filter: drop-shadow(2px 2px #222); }
+.panel {
+  background: #111d;
+  border: 3px solid #aaa;
+  box-shadow:
+    inset 0 0 0 2px #222,
+    0 8px 24px #000b;
+  padding: 24px;
+}
+.hint {
+  position: fixed;
+  z-index: 30;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111e;
+  border: 2px solid #fff;
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 5px 20px #000;
+}
+.hint:after {
+  content: "▼";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  color: #ffd829;
+  animation: bob 0.8s infinite alternate;
+}
+@keyframes bob {
+  to {
+    transform: translateY(8px);
+  }
+}
+@media (max-width: 600px) {
+  .mc-button {
+    font-size: 14px;
+  }
+  .panel {
+    padding: 16px;
+  }
+  .brand-lockup { width: min(360px, 80vw); }
+}
+@media (prefers-reduced-motion: reduce) { .panorama-bg { animation: none; } }

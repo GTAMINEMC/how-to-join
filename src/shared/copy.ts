@@ -1,0 +1,1 @@
+export async function copyIP(host:string){try{await navigator.clipboard.writeText(host)}catch{const t=document.createElement('textarea');t.value=host;document.body.append(t);t.select();document.execCommand('copy');t.remove()}}

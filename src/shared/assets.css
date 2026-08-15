@@ -1,0 +1,7 @@
+.desktop {
+  background-image: url("../assets/windows-wallpaper.png");
+}
+.game {
+  background-image:
+    linear-gradient(#0004, #000a), url("../assets/panorama.png");
+}
