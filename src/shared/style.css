@@ -18,13 +18,16 @@ body {
   background: #101214;
 }
 .panorama {
-  min-height: 100vh;
+  --page-scale: 1.5;
+  min-height: calc(100vh / var(--page-scale));
+  height: calc(100vh / var(--page-scale));
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-shadow: 2px 2px #222;
+  zoom: var(--page-scale);
 }
 .panorama-bg {
   position: fixed;
@@ -40,7 +43,11 @@ body {
   100% { transform: scale(1.12) translate3d(1.5%, 0.6%, 0); background-position: 57% 50%; }
 }
 .panorama > :not(.panorama-bg) { position: relative; z-index: 1; }
-.brand-lockup { display: block; width: min(430px, 76vw); text-align: center; }
+.brand-lockup {
+  display: block;
+  width: min(430px, calc(76vw / var(--page-scale)), calc(42vh / var(--page-scale)));
+  text-align: center;
+}
 .gtamine-brand { display: block; width: 100%; height: auto; object-fit: contain; filter: drop-shadow(4px 5px #111); image-rendering: pixelated; }
 .mc-button {
   position: relative;
@@ -121,6 +128,8 @@ body {
   .panel {
     padding: 16px;
   }
-  .brand-lockup { width: min(360px, 80vw); }
+  .brand-lockup {
+    width: min(360px, calc(80vw / var(--page-scale)), calc(42vh / var(--page-scale)));
+  }
 }
 @media (prefers-reduced-motion: reduce) { .panorama-bg { animation: none; } }

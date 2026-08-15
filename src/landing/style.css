@@ -1,7 +1,9 @@
 .landing-brand {
   position: relative;
+  width: min(430px, calc(76vw / var(--page-scale)), calc(42vh / var(--page-scale)));
   margin: 3.5vh 12px 4px;
 }
+.landing-brand .brand-lockup { width: 100%; }
 .landing-menu {
   width: min(620px, 90vw);
   text-align: center;
